@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+
+    <!-- ✅ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("{% static '2.webp' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .main {
+            margin: 5% auto;
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2C3E50;
+        }
+
+        label {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .form-section {
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            height: 45px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+        }
+
+        input[type=submit] {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input[type=submit]:hover {
+            background: linear-gradient(to right, #96c93d, #00b09b);
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2C3E50;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        .bg-income { background-color: #FFB6C1; }
+        .bg-age { background-color: #90EE90; }
+        .bg-rooms { background-color: #87CEFA; }
+        .bg-bedrooms { background-color: #FFD700; }
+        .bg-population { background-color: #D8BFD8; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Please enter the following values:</h1>
+        <form action="result">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-section bg-income">
+                        <label>Income</label>
+                        <input type="text" class="form-control" name="n1" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-section bg-age">
+                        <label>House Age</label>
+                        <input type="text" class="form-control" name="n2" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-section bg-rooms">
+                        <label>Number of Rooms</label>
+                        <input type="text" class="form-control" name="n3" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-section bg-bedrooms">
+                        <label>Number of Bed Rooms</label>
+                        <input type="text" class="form-control" name="n4" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-section bg-population">
+                        <label>   Population  </label>
+                        <input type="text" class="form-control" name="n5" required>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="PREDICT">
+        </form>
+
+        <h2>{{result2}}</h2>
+    </div>
+</body>
+</html>

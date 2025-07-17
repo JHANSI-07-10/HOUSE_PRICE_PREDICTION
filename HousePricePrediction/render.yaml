@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: house-price-prediction
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn HousePricePrediction.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: HousePricePrediction.settings
+      - key: PYTHON_VERSION
+        value: 3.10
